@@ -1,0 +1,27 @@
+<div class="card mb-4">
+									<div class="card-block">
+										<h3 class="card-title">Regiones</h3>
+
+										<h6 class="card-subtitle mb-2 text-muted">de Chile</h6>
+
+										<ul class="todo-list mt-2">
+											<li class="todo-list-item" ng-repeat="region in regions">
+												<div class="form-check">
+													
+
+													<label for="checkbox-1">{{region.name}}</label>
+
+													<div class="float-right action-buttons" ng-click="deleteRegion()"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+												</div>
+											</li>
+
+										</ul>
+
+										<div class="card-footer todo-list-footer">
+											<div class="input-group">
+												<input id="btn-input" type="text" class="form-control input-md" placeholder="Agregar nueva región"><span class="input-group-btn">
+													<button class="btn btn-primary btn-md" id="btn-todo">Agregar</button>
+											</span></div>
+										</div>
+									</div>
+								</div>
