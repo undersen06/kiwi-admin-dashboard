@@ -21,6 +21,24 @@
           defer.reject(_error);
         });
         return defer.promise;
+      },
+
+      sendNotification: function(notification) {
+        let defer = $q.defer();
+        $http({
+          url: "https://onesignal.com/api/v1/notifications",
+          method: 'POST',
+          headers:{
+            authorization: "Basic ZjYxMDczOTItNTQ4Mi00ZmQ5LWFiMTQtZmE0OWJmYjg4OTA4"
+          },
+          data:notification
+        }).then(function(_response) {
+          defer.resolve(_response);
+
+        }, function(_error) {
+          defer.reject(_error);
+        });
+        return defer.promise;
       }
 
     }

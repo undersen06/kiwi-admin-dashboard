@@ -16,10 +16,10 @@ CONTROLLER DEFINITION
         $Tips.getTips().then(function(_response){
 
           vm.tips = _response.data;
-          debugger;
+
         },function(_error){
 
-          debugger;
+
 
         })
 
@@ -27,13 +27,13 @@ CONTROLLER DEFINITION
 
 
       $scope.createTip = function (tip){
-        debugger;
+
 
         $Tips.createTip(tip).then(function(_response){
           $scope.getAllTips();
         },function(_error){
 
-          debugger;
+          
 
         })
 

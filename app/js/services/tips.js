@@ -19,9 +19,8 @@
         });
         return defer.promise;
       },
-      
+
       createTip: function(tip) {
-        debugger;
         let defer = $q.defer();
         $http({
           url: ENV.LOCAL + ENV.CREATE_TIP,

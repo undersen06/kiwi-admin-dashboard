@@ -1,3 +1,50 @@
+<div class="container-fluid" id="wrapper" >
+  <div class="row">
+    <sidebar></sidebar>
+    <main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
+      <section class="row">
+        <div class="col-sm-12">
+          <section class="row">
+            <div class="col-md-12 col-lg-6">
+
+              <div class="card mb-4">
+                <div class="card-block">
+                  <h3 class="card-title">Notificaciones</h3>
+
+                  <h6 class="card-subtitle mb-2 text-muted">Registro de las Ultimas 50 notificaciones enviadas.</h6>
+                  <div class="divider" style="margin-top: 1rem;"></div>
+
+                  <loading ng-if="isLoading"></loading>
+
+                  <div class="articles-container" ng-if="!isLoading">
+                    <div class="article border-bottom" ng-repeat="notification in notifications ">
+                      <div class="col-xs-12">
+                        <div class="row">
+                          <div class="col-2 date">
+                            <div class="large">30</div>
+
+                            <div class="text-muted">Jun</div>
+                          </div>
+
+                          <div class="col-10">
+                            <h4><a href="#">{{notification.headings.en}}</a></h4>
+
+                            <p>{{notification.contents.en}}</p>
+
+                            <p>Segmento de usuarios: {{notification.included_segments[0] }}</p>
+
+                            <div class="">
+                              <i class="fa fa-apple" aria-hidden="true" ng-if="notification.isIos"></i>
+                              <i class="fa fa-android" aria-hidden="true"  ng-if="notification.isAndroid"></i>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </div><!--End .article-->
+
+                  </div>
 
 
 
@@ -5,66 +52,96 @@
 
 
 
-              <div class="container-fluid" id="wrapper" ng-controller="TipsController as vm">
-                <div class="row">
-
-                  <sidebar></sidebar>
 
 
 
-                  <main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
 
-
-                    <section class="row">
-                      <div class="col-sm-12">
-                        <section class="row">
-                          <div class="col-md-12 col-lg-6">
+                </div>
+              </div>
 
 
 
-                            <div class="card mb-4">
-                                            <div class="card-block">
-                                              <h3 class="card-title">Tips</h3>
 
-                                              <h6 class="card-subtitle mb-2 text-muted">Tips que se muestran en la app</h6>
 
-                                              <div class="divider" style="margin-top: 1rem;"></div>
+            </div>
 
-                                              <div class="articles-container">
-                                                <div class="article border-bottom" ng-repeat="notification in notifications ">
-                                                  <div class="col-xs-12">
-                                                    <div class="row">
-                                                      <div class="col-2 date">
-                                                        <div class="large">30</div>
+            <div class="col-md-12 col-lg-6">
+              <div class="card mb-4">
 
-                                                        <div class="text-muted">Jun</div>
-                                                      </div>
+                <div class="card-block">
+                  <h3 class="card-title">Craer Notificación</h3>
 
-                                                      <div class="col-10">
-                                                        <h4><a href="#">{{notification.headings.en}}</a></h4>
+                  <loading ng-if="isSendingNotification"></loading>
 
-                                                        <p>{{notification.contents.en}}</p>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div class="clear"></div>
-                                                </div><!--End .article-->
+                  <div class="" ng-if="!isSendingNotification">
 
-                                              </div>
-                                            </div>
-                                          </div>
 
+
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" >Titulo</label>
+                      <div class="col-md-9">
+                        <input type="text"  class="form-control" ng-model="newNotification.title">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label">Contenido</label>
+                      <div class="col-md-9">
+                        <input class="form-control" type="text" ng-model="newNotification.body">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label">Contenido</label>
+                      <div class="col-md-9">
+                        <input class="form-control" placeholder="Solo para dispositivos Ios" ng-model="newNotification.subtitle">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label">Dispositivos</label>
+                      <div class="col-lg-6 mb-sm-4 mb-lg-0">
+                        <label class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" ng-click="interact(0)"><span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">{{forAndroid}}</span></label>
+                          <br>
+                          <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" ng-click="interact(1)"><span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Android</span></label>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label">Sexo</label>
+                          <div class="col-lg-6 mb-sm-4 mb-lg-0">
+                            <label class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" ng-click="interact(2)">
+                              <span class="custom-control-indicator"></span>
+                              <span class="custom-control-description">Hombre</span></label>
+                              <br>
+                              <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" ng-click="interact(3)">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Mujeres</span></label>
+                              </div>
+                            </div>
+
+
+                            <button type="button" class="btn btn-md btn-primary" ng-click="createNotification(newNotification);">Enviar Notificación</button>
 
 
                           </div>
-
-
-                        </section>
-                        <section class="row">
-                          <div class="col-12 mt-1 mb-4">Template by <a href="https://www.medialoot.com">Medialoot</a></div>
-                        </section>
+                        </div>
                       </div>
-                    </section>
-                  </main>
+                    </div>
+
+
+                  </section>
+                  <section class="row">
+                    <div class="col-12 mt-1 mb-4">Template by <a href="https://www.medialoot.com">Medialoot</a></div>
+                  </section>
                 </div>
-              </div>
+              </section>
+            </main>
+          </div>
+        </div>
