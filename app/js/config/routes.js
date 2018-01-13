@@ -27,8 +27,8 @@
     })
 
     .when("/notifications", {
-      templateUrl : "js/views/regions/regions.html",
-      controller : "parisCtrl"
+      templateUrl : "js/views/notifications/notifications.html",
+      controller : "notificationsController"
     });
 
   });
