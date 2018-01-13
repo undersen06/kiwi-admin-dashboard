@@ -18,6 +18,14 @@ CONTROLLER DEFINITION
     $scope.forMale = true;
     $scope.forFemale = true;
 
+    $scope.urlImage = '';
+    // $scope.newNotification = {};
+
+
+    $scope.loadImage = function(_url_image){
+      $scope.urlImage = _url_image;
+    }
+
 
 
 
@@ -67,6 +75,7 @@ CONTROLLER DEFINITION
       $Notifications.sendNotification(notification).then(function(_response){
         $scope.isSendingNotification = false;
       },function(_error){
+        debugger;
         $scope.isSendingNotification = false;
       })
 
@@ -77,8 +86,8 @@ CONTROLLER DEFINITION
      function _prepareNotification(notification){
 
       return notification = {
-        // isIos:$scope.forIos || false,
-        // isAndroid:$scope.forAndroid || false,
+        isIos:$scope.forIos || false,
+        isAndroid:$scope.forAndroid || false,
         headings:{
           en:notification.title,
           es:notification.title
@@ -92,7 +101,8 @@ CONTROLLER DEFINITION
           es:notification.subtitle
         },
         included_segments: ["All"],
-        app_id:'3169e7d1-aa60-4fd6-920b-62a86a2e34c0'
+        app_id:'3169e7d1-aa60-4fd6-920b-62a86a2e34c0',
+        big_picture:notification.bigImage
       }
 
     }

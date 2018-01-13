@@ -91,11 +91,40 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-md-3 col-form-label">Contenido</label>
+                      <label class="col-md-3 col-form-label">Subtitulo</label>
                       <div class="col-md-9">
                         <input class="form-control" placeholder="Solo para dispositivos Ios" ng-model="newNotification.subtitle">
                       </div>
                     </div>
+
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label">Url imagen</label>
+
+
+                      <div class="col-md-9">
+  												<div class="input-group">
+  													<input type="text" class="form-control" ng-model="newNotification.bigImage"><span class="input-group-btn" >
+  														<button class="btn btn-primary" type="button" data-original-title="" title="" ng-click="loadImage(newNotification.bigImage)">Cargar</button>
+  												</span>
+                        </div>
+  										</div>
+
+
+
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label">Preview imagen</label>
+
+                      <div class="col-md-9 ">
+                        <img class="img-fluid" src="{{urlImage}}" alt="">
+                      </div>
+
+
+                    </div>
+
+
+
 
                     <div class="form-group row">
                       <label class="col-md-3 col-form-label">Dispositivos</label>
