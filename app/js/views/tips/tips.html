@@ -1,0 +1,66 @@
+<div class="container-fluid" id="wrapper" ng-controller="TipsController as vm">
+  <div class="row">
+
+    <sidebar></sidebar>
+
+
+
+    <main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
+
+
+      <section class="row">
+        <div class="col-sm-12">
+          <section class="row">
+            <div class="col-md-12 col-lg-6">
+
+
+
+              <h1 class="mb-4">Tips de la aplicación.</h1>
+
+              <tips value="vm.tips"></tips>
+
+
+
+
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+              <div class="card mb-4">
+
+                <div class="card-block">
+										<h3 class="card-title">Craer Tip</h3>
+
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label" >Titulo</label>
+												<div class="col-md-9">
+													<input type="text"  class="form-control" ng-model="tip.title">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label">Contenido</label>
+												<div class="col-md-9">
+													<input class="form-control" type="text" ng-model="tip.body">
+												</div>
+											</div>
+
+
+                  <button type="button" class="btn btn-md btn-primary" ng-click="createTip(tip);">crear</button>
+
+
+
+									</div>
+
+
+              </div>
+
+
+            </div>
+          </section>
+          <section class="row">
+            <div class="col-12 mt-1 mb-4">Template by <a href="https://www.medialoot.com">Medialoot</a></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>

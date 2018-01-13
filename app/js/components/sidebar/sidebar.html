@@ -4,12 +4,12 @@
   <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
 
   <ul class="nav nav-pills flex-column sidebar-nav">
-    <li class="nav-item"><a class="nav-link" ng-class="currentState == 'MainController' ? 'active' : ''" href="index.html"><em class="fa fa-tachometer"></em> Dashboard </a></li>
-    <li class="nav-item"><a class="nav-link" ng-class="currentState == 'RegionsController' ? 'active' : ''" href="index.html"><em class="fa fa-globe"></em> Regiones & comunas </a></li>
-    <li class="nav-item"><a class="nav-link" ng-class="currentState == 'TipController' ? 'active' : ''" href="widgets.html"><em class="fa fa-commenting"></em> Tips </a></li>
+    <li class="nav-item"><a class="nav-link" ng-class="currentState == 'MainController' ? 'active' : ''" href="#/dashboard"><em class="fa fa-tachometer"></em> Dashboard </a></li>
+    <li class="nav-item"><a class="nav-link" ng-class="currentState == 'RegionsController' ? 'active' : ''" href="#/regions"><em class="fa fa-globe"></em> Regiones & comunas </a></li>
+    <li class="nav-item"><a class="nav-link" ng-class="currentState == 'TipsController' ? 'active' : ''" href="#/tips"><em class="fa fa-commenting"></em> Tips </a></li>
     <li class="nav-item"><a class="nav-link" href="charts.html"><em class="fa fa-bar-chart"></em> Charts</a></li>
     <li class="nav-item"><a class="nav-link" href="elements.html"><em class="fa fa-hand-o-up"></em> UI Elements</a></li>
     <li class="nav-item"><a class="nav-link" href="cards.html"><em class="fa fa-clone"></em> Cards</a></li>
   </ul>
 
-  <a href="#" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
+  <a href="#" ng-click="logout()" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>

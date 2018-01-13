@@ -14,12 +14,16 @@ CONTROLLER DEFINITION
     //verify user exist
 
     if(AuthModel.getAdmin()){
-      debugger;
+
     }else{
-      debugger;
+
       $window.location.href = '#/login';
     }
 
+
+    // this.foo = function (event) {
+    //        this.callbackFn({event: event});
+    //    }
 
 
 

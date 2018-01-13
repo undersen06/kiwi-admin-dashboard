@@ -16,14 +16,20 @@
       controller : "LoginController"
     })
 
-    .when("/region", {
-      templateUrl : "../view1/view1.htm",
-      controller : "londonCtrl"
+    .when("/tips", {
+      templateUrl : "js/views/tips/tips.html",
+      controller : "TipsController"
     })
 
-    .when("/paris", {
-      templateUrl : "paris.htm",
+    .when("/regions", {
+      templateUrl : "js/views/regions/regions.html",
+      controller : "RegionsController"
+    })
+
+    .when("/notifications", {
+      templateUrl : "js/views/regions/regions.html",
       controller : "parisCtrl"
     });
+
   });
 }).call(this);

@@ -8,7 +8,6 @@
       controller: function ($Regions,$scope) {
 
         $Regions.getRegions().then(function(_response){
-          debugger;
           $scope.regions = _response.data;
         },function(_error){
 
