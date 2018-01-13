@@ -1,7 +1,13 @@
 (function() {
   this.app.config(function($routeProvider) {
+
+
     $routeProvider
     .when("/", {
+      templateUrl : "js/views/main/main.html",
+      controller : "MainController"
+    })
+    .when("/dashboard", {
       templateUrl : "js/views/main/main.html",
       controller : "MainController"
     })
