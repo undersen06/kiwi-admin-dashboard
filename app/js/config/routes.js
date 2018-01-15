@@ -28,7 +28,22 @@
 
     .when("/notifications", {
       templateUrl : "js/views/notifications/notifications.html",
-      controller : "notificationsController"
+      controller : "NotificationsController"
+    })
+
+    .when("/users", {
+      templateUrl : "js/views/users/users.html",
+      controller : "UsersController"
+    })
+
+    .when("/settings", {
+      templateUrl : "js/views/config/settings/settings.html",
+      controller : "SettingsController"
+    })
+
+    .when("/profile", {
+      templateUrl : "js/views/config/profile/profile.html",
+      controller : "ProfileController"
     });
 
   });

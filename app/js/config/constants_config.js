@@ -38,6 +38,10 @@
     ENABLE_TIP: "tips/`${tip.id}`/enable",
     DISABLE_TIP: "tips/`${tip.id}`/disables",
 
+    UPDATE_ONESIGNAL:"settings/onesignal",
+    GET_ONESIGNAL:"settings/onesignal",
+    CREATE_ONESIGNAL:"settings/onesignal"
+
 
 
 

@@ -6,7 +6,7 @@ CONTROLLER DEFINITION
 =============================================================================
 */
 (function() {
-  this.app.controller("notificationsController", ["$scope","$Notifications",
+  this.app.controller("NotificationsController", ["$scope","$Notifications",
   function($scope,$Notifications) {
 
     $scope.isLoading = true;
