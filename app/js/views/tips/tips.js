@@ -26,7 +26,7 @@ CONTROLLER DEFINITION
     }
 
     $scope.pagination = function(index){
-      $scope.index = 1;
+      $scope.index = index;
       $scope.tipsShow = $scope.tips[index]
     debugger;
     }
