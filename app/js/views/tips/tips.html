@@ -17,7 +17,46 @@
 
               <h1 class="mb-4">Tips de la aplicación.</h1>
 
-              <tips value="vm.tips"></tips>
+              <!-- <tips value="vm.tips" ></tips> -->
+
+
+              <div class="card mb-4">
+                <div class="card-block">
+                  <h3 class="card-title">Tips</h3>
+
+                  <h6 class="card-subtitle mb-2 text-muted">Tips que se muestran en la app</h6>
+
+                  <div class="divider" style="margin-top: 1rem;"></div>
+
+                  <div class="articles-container">
+                    <div class="article border-bottom" ng-repeat="tip in tipsShow | orderBy:_id:true">
+                      <div class="col-xs-12">
+                        <div class="row">
+                          <div class="col-2 date">
+                            <div class="large">30</div>
+
+                            <div class="text-muted">Jun</div>
+                          </div>
+
+                          <div class="col-10">
+                            <h4><a href="#">{{tip.title}}</a></h4>
+
+                            <p>{{tip.body}}</p>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </div><!--End .article-->
+
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-secondary" ng-click="pagination($index)" ng-repeat="tip in tips">{{$index + 1}}</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
 
 
 
@@ -28,27 +67,27 @@
               <div class="card mb-4">
 
                 <div class="card-block">
-										<h3 class="card-title">Craer Tip</h3>
+                  <h3 class="card-title">Craer Tip</h3>
 
-											<div class="form-group row">
-												<label class="col-md-3 col-form-label" >Titulo</label>
-												<div class="col-md-9">
-													<input type="text"  class="form-control" ng-model="tip.title">
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-md-3 col-form-label">Contenido</label>
-												<div class="col-md-9">
-													<input class="form-control" type="text" ng-model="tip.body">
-												</div>
-											</div>
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" >Titulo</label>
+                    <div class="col-md-9">
+                      <input type="text"  class="form-control" ng-model="tip.title">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Contenido</label>
+                    <div class="col-md-9">
+                      <input class="form-control" type="text" ng-model="tip.body">
+                    </div>
+                  </div>
 
 
                   <button type="button" class="btn btn-md btn-primary" ng-click="createTip(tip);">crear</button>
 
 
 
-									</div>
+                </div>
 
 
               </div>

@@ -3,7 +3,9 @@
 (function() {
   this.app.component('tips', {
       bindings: { value: "=" },
-        controller: function(){
+        controller: function($scope){
+
+
 
         },
         controllerAs: "vm",

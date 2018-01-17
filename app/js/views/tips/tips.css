@@ -1,4 +1,10 @@
-h1 {
-  color: red; }
+button.btn {
+  color: #292b2c;
+  background-color: #fff;
+  border-color: #ccc; }
+  button.btn.btn-secondary:hover, button.btn .btn-secondary:focus, button.btn .btn-secondary:active {
+    border-color: #7376df;
+    background-color: #7376df;
+    color: #fff; }
 
 /*# sourceMappingURL=tips.css.map */
